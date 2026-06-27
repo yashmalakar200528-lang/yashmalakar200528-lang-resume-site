@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yash Malakar — Resume (Print)</title>
+  <style>
+    :root {
+      --accent: #ff7aa2;
+      --accent-2: #7be4ff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: white;
+      color: #333;
+      line-height: 1.5;
+      font-size: 10pt;
+      padding: 20px;
+    }
+
+    .resume-container {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 15px;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 10px;
+    }
+
+    .header h1 {
+      font-size: 20pt;
+      color: #000;
+      margin-bottom: 5px;
+    }
+
+    .header p {
+      color: #666;
+      font-size: 9pt;
+      margin: 3px 0;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      font-size: 8pt;
+      flex-wrap: wrap;
+    }
+
+    .contact-info span {
+      color: #666;
+    }
+
+    .contact-info a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-size: 12pt;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 4px;
+    }
+
+    /* Summary */
+    .summary {
+      font-size: 9pt;
+      color: #555;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      font-size: 9pt;
+    }
+
+    .skill-item {
+      padding: 5px;
+      background: #f9f9f9;
+      border-left: 2px solid var(--accent);
+      padding-left: 8px;
+    }
+
+    .skill-item strong {
+      color: var(--accent);
+    }
+
+    /* Experience */
+    .exp-item {
+      margin-bottom: 12px;
+      page-break-inside: avoid;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3px;
+    }
+
+    .exp-title {
+      font-weight: bold;
+      color: #000;
+      font-size: 10pt;
+    }
+
+    .exp-meta {
+      font-size: 8pt;
+      color: #999;
+    }
+
+    .exp-company {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 9pt;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      margin: 5px 0 0 15px;
+      font-size: 8pt;
+    }
+
+    .exp-bullets li {
+      margin-bottom: 3px;
+      color: #555;
+    }
+
+    .exp-bullets li::before {
+      content: '• ';
+      color: var(--accent);
+      font-weight: bold;
+      margin-right: 5px;
+    }
+
+    /* Education & Certs */
+    .ed-item {
+      margin-bottom: 8px;
+      font-size: 9pt;
+    }
+
+    .ed-item strong {
+      color: #000;
+    }
+
+    .ed-item em {
+      color: #999;
+      font-size: 8pt;
+    }
+
+    /* Tools */
+    .tools-list {
+      font-size: 8pt;
+      color: #555;
+    }
+
+    .tools-list strong {
+      color: #000;
+    }
+
+    /* Page Break */
+    @media print {
+      body {
+        margin: 0;
+        padding: 10mm;
+      }
+
+      .resume-container {
+        width: 100%;
+      }
+
+      .section {
+        page-break-inside: avoid;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 9pt;
+        padding: 10px;
+      }
+
+      .header h1 {
+        font-size: 16pt;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-container">
+    <!-- Header -->
+    <div class="header">
+      <h1>YASH MALAKAR</h1>
+      <p><strong>Entry-level Tech / Computer Operator</strong></p>
+      <div class="contact-info">
+        <span><a href="mailto:yashmalakar200528@gmail.com">yashmalakar200528@gmail.com</a></span>
+        <span>|</span>
+        <span><a href="https://github.com/yashmalakar200528-lang" target="_blank">GitHub: yashmalakar200528-lang</a></span>
+        <span>|</span>
+        <span><a href="https://www.linkedin.com/in/yash-malakar-dev-op" target="_blank">LinkedIn: yash-malakar-dev-op</a></span>
+        <span>|</span>
+        <span>Kishangarh, Ajmer, Rajasthan</span>
+      </div>
+    </div>
+
+    <!-- Professional Summary -->
+    <div class="section">
+      <div class="section-title">PROFESSIONAL SUMMARY</div>
+      <p class="summary">
+        Entry-level tech professional and BTech CSE student with strong problem-solving skills and hands-on experience in coding, UI/UX design, and AI-driven tools. Proficient in prompt engineering, core computer science concepts, and Microsoft Copilot. Eager to leverage technical expertise and creative thinking to contribute to innovative tech teams and deliver user-centered solutions.
+      </p>
+    </div>
+
+    <!-- Core Skills -->
+    <div class="section">
+      <div class="section-title">CORE SKILLS</div>
+      <div class="skills-grid">
+        <div class="skill-item"><strong>Problem Solving</strong> – Analytical debugging and design</div>
+        <div class="skill-item"><strong>Coding</strong> – Efficient, maintainable code</div>
+        <div class="skill-item"><strong>Prompt Engineering</strong> – AI model optimization</div>
+        <div class="skill-item"><strong>UI/UX Design</strong> – User-centered interfaces</div>
+        <div class="skill-item"><strong>Core CS Concepts</strong> – DSA, OS, DBMS, Networking</div>
+        <div class="skill-item"><strong>Copilot & AI</strong> – Microsoft Copilot expert</div>
+      </div>
+    </div>
+
+    <!-- Tools & Technologies -->
+    <div class="section">
+      <div class="section-title">TOOLS & TECHNOLOGIES</div>
+      <p class="tools-list">
+        <strong>Development:</strong> Replit, GitHub/Git, VS Code, HTML/CSS/JavaScript<br>
+        <strong>Design:</strong> Figma, CorelDraw<br>
+        <strong>Content:</strong> WordPress<br>
+        <strong>AI & Automation:</strong> Microsoft Copilot, GPT, Claude, Microsoft 365
+      </p>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+      <div class="section-title">EDUCATION</div>
+      <div class="ed-item">
+        <strong>B.Tech in Computer Science & Engineering</strong><br>
+        Aaryabhata College, Ajmer <em>(Currently in 5th Semester, 3rd Year)</em>
+      </div>
+      <div class="ed-item">
+        <strong>Coursework:</strong> Data Structures, Algorithms, DBMS, Operating Systems, Networking, Software Engineering, Web Development
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="section">
+      <div class="section-title">CERTIFICATIONS & TRAINING</div>
+      <div class="ed-item">
+        ✓ WordPress Development & Customization<br>
+        ✓ CorelDraw Graphics Design<br>
+        ✓ Microsoft Copilot Proficiency<br>
+        ✓ Microsoft 365 Essentials
+      </div>
+    </div>
+
+    <!-- Experience & Projects -->
+    <div class="section">
+      <div class="section-title">EXPERIENCE & PROJECTS</div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">WordPress Development & Customization</div>
+          <div class="exp-meta">Portfolio Project</div>
+        </div>
+        <div class="exp-company">Certified | Full-Stack Development</div>
+        <ul class="exp-bullets">
+          <li>Designed and deployed custom WordPress sites with responsive layouts</li>
+          <li>Proficient in theme customization, plugin integration, and SEO optimization</li>
+          <li>Focused on user experience and accessibility best practices</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">UI/UX & Graphic Design Projects</div>
+          <div class="exp-meta">Academic & Portfolio</div>
+        </div>
+        <div class="exp-company">Figma, CorelDraw | Design Tools</div>
+        <ul class="exp-bullets">
+          <li>Created mockups and wireframes for web and mobile applications</li>
+          <li>Applied user-centered design principles to improve interface usability</li>
+          <li>Designed graphics and visual assets for multiple projects</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Copilot & AI-Assisted Development</div>
+          <div class="exp-meta">Active Experience</div>
+        </div>
+        <div class="exp-company">Hands-on | Productivity Enhancement</div>
+        <ul class="exp-bullets">
+          <li>Leveraging Microsoft Copilot for code generation and problem-solving</li>
+          <li>Proficient in prompt engineering to maximize AI tool effectiveness</li>
+          <li>Integrating AI tools into development workflow for improved productivity</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">BTech CSE Coursework & Projects</div>
+          <div class="exp-meta">Academic</div>
+        </div>
+        <div class="exp-company">Aaryabhata College, Ajmer</div>
+        <ul class="exp-bullets">
+          <li>Strong foundation in data structures, algorithms, DBMS, and operating systems</li>
+          <li>Practical experience with coding assignments and system design projects</li>
+          <li>Actively learning and applying UI/UX principles to academic projects</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

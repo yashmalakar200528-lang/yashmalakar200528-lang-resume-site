@@ -1,0 +1,67 @@
+name: Generate Resume PDF
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          npm init -y
+          npm install puppeteer@latest http-server@latest
+
+      - name: Start HTTP server (background)
+        run: |
+          npx http-server -p 8080 -c-1 . &
+          sleep 3
+
+      - name: Generate Resume PDF
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'false'
+        run: |
+          node -e "
+          const puppeteer = require('puppeteer');
+          (async () => {
+            const browser = await puppeteer.launch({
+              args: ['--no-sandbox', '--disable-setuid-sandbox']
+            });
+            const page = await browser.newPage();
+            await page.goto('http://127.0.0.1:8080/resume-print.html', {
+              waitUntil: 'networkidle0'
+            });
+            await page.pdf({
+              path: 'resume.pdf',
+              format: 'A4',
+              printBackground: true,
+              margin: { top: '12mm', bottom: '12mm', left: '12mm', right: '12mm' }
+            });
+            console.log('Resume PDF generated: resume.pdf');
+            await browser.close();
+          })();
+          "
+
+      - name: Upload PDF as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdf
+          path: resume.pdf
+
+      - name: Commit and push PDF (optional)
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add resume.pdf
+          git commit -m "Auto-generate resume PDF" || true
+          git push origin main || true
